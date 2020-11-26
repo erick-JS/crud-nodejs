@@ -1,0 +1,53 @@
+//Testes de requisição de Livro
+@baseUrl = http://localhost:4000
+
+###
+//Obtendo todos os livros
+GET {{baseUrl}}/livro
+Content-Type: : application/json
+
+###
+//Obtendo um livro pelo ID
+@id = 5fbc9025b50aef1de03492d4
+GET {{baseUrl}}/livro/{{id}}
+Content-Type: : application/json
+
+###
+//Inserindo um novo livro
+POST {{baseUrl}}/livro
+Content-Type: application/json
+
+{
+    "ISBN": "8521635435",
+    "titulo": "Um Curso de Cálculo - Volume 1",
+    "autor": "Hamilton Luiz Guidorizzi",
+    "editora": "LTC",
+    "idioma": "Português",
+    "genero": "Ciências Exatas",
+    "qtdePaginas": "633",
+    "foto": "https://m.media-amazon.com/images/I/31lTJSnoOPL.jpg",
+    "preco": "144"
+}
+
+###
+//Removendo o livro pelo ID
+DELETE {{baseUrl}}/livro/{{id}}
+Content-Type: application/json
+
+###
+//Alterando um livro
+PUT {{baseUrl}}/livro
+Content-Type: application/json
+
+{
+    "_id": "5fbc9025b50aef1de03492d4",
+    "ISBN": "8521635435",
+    "titulo": "Um Curso de Cálculo - Volume 2",
+    "autor": "Hamilton Luiz Guidorizzi",
+    "editora": "LTC",
+    "idioma": "Português",
+    "genero": "Ciências Exatas",
+    "qtdePaginas": "633",
+    "foto": "https://m.media-amazon.com/images/I/31lTJSnoOPL.jpg",
+    "preco": "200.99"
+}
